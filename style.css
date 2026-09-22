@@ -96,3 +96,22 @@ button:hover{
 .delete:hover{
     background-color: rgb(222, 13, 13);
 }
+
+@media(max-width:500px){
+   .wrap{
+    width: 100%;
+    height:100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+   }
+
+   .btn_click{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+   }
+}
