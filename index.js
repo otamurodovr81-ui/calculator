@@ -71,6 +71,16 @@ btn.forEach((itom) => {
         
 
         } else {
+             
+            if (itom.value === ".") {
+
+                 const lastNumber = input.value.split(/[\+\-\*\/]/).pop();
+
+                      if (lastNumber.includes(".")) {
+                        return
+                    };
+            };
+
             input.value += itom.value;
         }
 

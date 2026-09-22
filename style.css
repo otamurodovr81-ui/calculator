@@ -6,6 +6,9 @@
 button{
     cursor: pointer;
 }
+body{
+    background-color: darkslategrey;
+}
 
 body{
     width: 100%;
@@ -20,7 +23,7 @@ body{
     width: 380px;
     height: 560px;
     background-color: cadetblue;
-    box-shadow: 4px  13px 20px black;
+    box-shadow: 4px  10px 10px black;
     border-radius: 20px;
     padding: 20px;
 
@@ -71,7 +74,7 @@ button{
     height: 70px; 
     border-radius: 5px;
     border: none;
-    background-color:darkgray;
+    background-color:rgb(151, 149, 149);
 
     font-size: 22px;
     color: white;
