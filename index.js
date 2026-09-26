@@ -9,44 +9,18 @@ function calculate() {
 
     const text = input.value;
 
-    if (text.includes("+")) {
-
-        const numbers = text.split("+");
-
-        const number1 = Number(numbers[0]);
-        const number2 = Number(numbers[1]);
-
-        input.value = number1 + number2;
-
-    } else if (text.includes("-")) {
-
-        const numbers = text.split("-");
-
-        const number1 = Number(numbers[0]);
-        const number2 = Number(numbers[1]);
-
-        input.value = number1 - number2;
-
-    } else if (text.includes("*")) {
-
-        const numbers = text.split("*");
-
-        const number1 = Number(numbers[0]);
-        const number2 = Number(numbers[1]);
-
-        input.value = number1 * number2;
-
-    } else if (text.includes("/")) {
-
-        const numbers = text.split("/");
-
-        const number1 = Number(numbers[0]);
-        const number2 = Number(numbers[1]);
-
-        input.value = number1 / number2;
+    if (text === "") {
+        return;
     }
 
-    lastValue = "";
+    try {
+        input.value = Function(`"use strict"; return (${text})`)();
+        lastValue = "";
+    } catch {
+        input.value = "Error";
+        lastValue = "";
+    }
+
 }
 
 window.addEventListener("keydown", function (event) {
@@ -87,7 +61,7 @@ window.addEventListener("keydown", function (event) {
 
 
     // Backspace
-         if (event.key === "Backspace") {
+        if (event.key === "Backspace") {
 
         input.value = input.value.slice(0, -1);
 
